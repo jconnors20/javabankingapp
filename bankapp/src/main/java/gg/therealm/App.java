@@ -72,7 +72,7 @@ public class App {
                     try {
 
                         double amount = Double.parseDouble(withdrawalInput);
-                        account.createTransaction("deposit", amount);
+                        account.createTransaction("withdrawal", amount);
                         System.out.println("\n");
                         System.out.println("=======================================");
                         System.out.println("Withdrawal of $" + amount + " completed!");
