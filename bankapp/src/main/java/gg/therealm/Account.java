@@ -21,6 +21,7 @@ public class Account {
         this.accountId = accountId;
         String currentDirectory = System.getProperty("user.dir");
         String transactionFolder = currentDirectory + "/bankapp/transactions/" + accountId + "/";
+        
         this.transactionFolderPath = Paths.get(transactionFolder);
         if (Files.isDirectory(this.transactionFolderPath)) {
             try {
@@ -35,7 +36,7 @@ public class Account {
 
         } else {
             try {
-                Files.createDirectory(this.transactionFolderPath);
+                Files.createDirectories(this.transactionFolderPath);
                 this.balance = 0;
             } catch (Exception e) {
                 e.printStackTrace();
