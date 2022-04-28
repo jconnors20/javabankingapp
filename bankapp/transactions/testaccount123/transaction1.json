@@ -1,7 +1,0 @@
-{
-    "amount": "100.00",
-    "accountId": "testaccount123",
-    "accountName": "Jesse Connors",
-    "transactionType": "deposit",
-    "transactionString": "deposit of amount $20.00 made by Jesse Connors"
-}
