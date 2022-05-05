@@ -5,9 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.IOException;
 import java.util.List;
-import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -29,7 +27,7 @@ public class Account {
 
         String amountString = String.valueOf(amount);
 
-        if (transactionType == "withdrawal") {
+        if (transactionType.equals("withdrawal")) {
             amountString = "-" + amountString;
         }
 
@@ -168,7 +166,7 @@ public class Account {
 
                 while (queryResults.next()) {
                     System.out.println(queryResults.getString("transactionString"));
-                    accountBalance += Double.valueOf(queryResults.getString("amount"));
+                    accountBalance += Double.parseDouble(queryResults.getString("amount"));
                 }
 
             } catch (Exception e) {
